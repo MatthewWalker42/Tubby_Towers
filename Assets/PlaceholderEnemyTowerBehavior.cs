@@ -5,12 +5,9 @@ public class PlaceholderEnemyTowerBehavior : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		IEnumerator wait;
-		for (int i=0; i<3; i++) {
-			CreateUnit ();
-			wait = WaitSecond ();
-			
-		}
+
+		StartCoroutine (WaitSecond ());
+		
 	
 	}
 	
@@ -24,6 +21,12 @@ public class PlaceholderEnemyTowerBehavior : MonoBehaviour {
 		newFighter.transform.position = new Vector2(53, -2);
 	}
 	IEnumerator WaitSecond(){
-		yield return new WaitForSeconds (2);
+	
+		for (int i=0; i<3; i++) {
+			CreateUnit ();
+			yield return new WaitForSeconds (3.0f);
+			
+		}
+
 	}
 }
