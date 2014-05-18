@@ -5,12 +5,10 @@ public class NewBehaviourScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		IEnumerator wait;
-		for (int i=0; i<3; i++) {
-			CreateUnit ();
-			wait = WaitSecond ();
 
-		}
+		StartCoroutine ("WaitSecond");
+
+
 	
 	}
 	
@@ -25,5 +23,14 @@ public class NewBehaviourScript : MonoBehaviour {
 		}
 	IEnumerator WaitSecond(){
 		yield return new WaitForSeconds (2);
+
+		//IEnumerator wait;
+		for (int i=0; i<3; i++) {
+			CreateUnit ();
+			//wait = WaitSecond ();
+			
 		}
+
+		StartCoroutine ("WaitSecond");
+	}
 }
