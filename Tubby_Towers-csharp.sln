@@ -5,6 +5,8 @@ Project("{17ACDAE4-FA35-7996-F86F-54C106E9B369}") = "Tubby_Towers", "Assembly-CS
 EndProject
 Project("{17ACDAE4-FA35-7996-F86F-54C106E9B369}") = "Tubby_Towers", "Assembly-CSharp-vs.csproj", "{3FC9AB75-2474-E8C6-2A91-8BC0C9F071CE}"
 EndProject
+Project("{17ACDAE4-FA35-7996-F86F-54C106E9B369}") = "Tubby_Towers", "Assembly-CSharp-Editor-vs.csproj", "{80D80756-0EED-450C-C0DD-9D128D57D7DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,11 +21,15 @@ Global
 		{3FC9AB75-2474-E8C6-2A91-8BC0C9F071CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FC9AB75-2474-E8C6-2A91-8BC0C9F071CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FC9AB75-2474-E8C6-2A91-8BC0C9F071CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80D80756-0EED-450C-C0DD-9D128D57D7DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80D80756-0EED-450C-C0DD-9D128D57D7DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80D80756-0EED-450C-C0DD-9D128D57D7DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80D80756-0EED-450C-C0DD-9D128D57D7DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																GlobalSection(MonoDevelopProperties) = preSolution
+																				GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

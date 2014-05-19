@@ -7,7 +7,7 @@ public class PlaceholderPlayerTower : MonoBehaviour {
 	void Start () {
 	
 		for (int i=0; i<1; i++) {
-			StartCoroutine(WaitSecond());
+			//StartCoroutine(WaitSecond());
 
 
 		}
@@ -19,7 +19,7 @@ public class PlaceholderPlayerTower : MonoBehaviour {
 	
 	}
 
-	void CreateUnit(){
+	public void CreateUnit(){
 		GameObject newFighter = (GameObject) Instantiate (Resources.Load ("Placeholder/PlaceholderPlayerFighter"));
 		newFighter.transform.position = new Vector2(-33, -2);
 		}
