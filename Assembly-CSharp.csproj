@@ -178,6 +178,8 @@
      <Compile Include="Assets\PlaceholderEnemyTowerBehavior.cs" />
      <Compile Include="Assets\PlaceholderPlayerTower.cs" />
      <Compile Include="Assets\PlayerFighterBehavior.cs" />
+     <Compile Include="Assets\RollerButtonScript.cs" />
+     <Compile Include="Assets\RollerFighter.cs" />
      <Compile Include="Assets\SpawnEnemies.cs" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\ReadMe - 3.5.1.txt" />

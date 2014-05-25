@@ -52,6 +52,7 @@ public class PlayerFighterBehavior : MonoBehaviour {
 		if ( crash.gameObject.transform.tag =="Player")
 		{
 			this.speed = 0f;
+			StartCoroutine(waitMove());
 			
 		}
 
@@ -91,4 +92,18 @@ public class PlayerFighterBehavior : MonoBehaviour {
 		this.speed = 10.1f;
 		
 	}
-}
+
+	void keepMoving(){
+			
+		this.speed = 10.1f;
+
+		}
+
+	IEnumerator waitMove(){
+			
+		yield return new WaitForSeconds (2.0f);
+		this.keepMoving ();
+
+		}
+
+	}
