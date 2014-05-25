@@ -16,9 +16,11 @@ public class PlaceholderEnemyTowerBehavior : MonoBehaviour {
 	public float endSecondPhase = 120.0f;
 	protected float actualTimer = 0f;
 	protected bool timePassed = true;
+	public float health;
 
 	// Use this for initialization
 	void Start () {
+		health = 100.0f;
 
 		//StartCoroutine (WaitSecond ());
 		

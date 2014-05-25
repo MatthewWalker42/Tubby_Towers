@@ -24,6 +24,12 @@ public class PlaceholderPlayerTower : MonoBehaviour {
 		newFighter.transform.position = new Vector2(-33, -2);
 		}
 
+	public void CreateRoller(){
+		GameObject newFighter = (GameObject) Instantiate (Resources.Load ("Placeholder/PlaceholderRoller"));
+		newFighter.transform.position = new Vector2(-33, 8);
+
+	}
+
 	IEnumerator WaitSecond(){
 
 		for (int i = 0; i < 3; i++) {
