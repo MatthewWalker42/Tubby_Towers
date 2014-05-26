@@ -62,6 +62,7 @@ public class PlaceholderEnemyBehavior : MonoBehaviour {
 
 		if(target.transform.tag == "Player"){
 			while(target.transform.GetComponent<PlayerFighterBehavior> ().health >= 0)
+			
 			{
 				target.transform.GetComponent<PlayerFighterBehavior> ().health -= this.dmg;
 

@@ -30,6 +30,11 @@ public class PlaceholderPlayerTower : MonoBehaviour {
 
 	}
 
+	public void CreateRanged(){
+		GameObject newFighter = (GameObject) Instantiate (Resources.Load ("Placeholder/RangedFighter"));
+		newFighter.transform.position = new Vector2(-35, -2);
+	}
+
 	IEnumerator WaitSecond(){
 
 		for (int i = 0; i < 3; i++) {
