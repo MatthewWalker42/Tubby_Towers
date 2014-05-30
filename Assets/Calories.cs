@@ -18,7 +18,7 @@ public class Calories : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		_cTimer += Time.deltaTime;
-		Debug.Log("Calories: " + numCalories);
+		//Debug.Log("Calories: " + numCalories);
 		if ((int) _cTimer > prevcTimer){
 			numCalories += 1;
 			prevcTimer = (int) _cTimer;

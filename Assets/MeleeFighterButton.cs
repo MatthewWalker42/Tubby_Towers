@@ -3,19 +3,36 @@ using System.Collections;
 
 public class MeleeFighterButton : MonoBehaviour {
 	public int cost = 5;
+	protected UIButton buttonScript; 
+	protected GameObject calorieSubtract;
+	public float buttonCool = 2.0f;
+	protected bool onCooldown = false;
+	protected GameObject go;
+	protected PlaceholderPlayerTower makeUnit;
 
+	void Start () {
+		buttonScript = GetComponent<UIButton>();
+		calorieSubtract = GameObject.Find("CalorieTimer");
+		go = GameObject.Find ("PlaceholderPlayerTower");
+		makeUnit = (PlaceholderPlayerTower) go.GetComponent (typeof(PlaceholderPlayerTower));
+	}
 
 	void OnClick(){
-		GameObject calorieSubtract = GameObject.Find("CalorieTimer");
 
-		if (calorieSubtract.GetComponent<Calories>().numCalories >= cost)
+
+		if (calorieSubtract.GetComponent<Calories>().numCalories >= cost && !onCooldown)
 		{
-
-			GameObject go = GameObject.Find ("PlaceholderPlayerTower");
-			PlaceholderPlayerTower makeUnit = (PlaceholderPlayerTower) go.GetComponent (typeof(PlaceholderPlayerTower));
 			makeUnit.CreateUnit ();
-			//this.isEnabled(false);
 			calorieSubtract.GetComponent<Calories> ().numCalories -= this.cost;
+			StartCoroutine (CoolDown());
 		}
+	}
+
+	IEnumerator CoolDown (){
+		buttonScript.isEnabled = false;
+		onCooldown = true;
+		yield return new WaitForSeconds(buttonCool);
+		onCooldown = false;
+		buttonScript.isEnabled = true;
 	}
 }
