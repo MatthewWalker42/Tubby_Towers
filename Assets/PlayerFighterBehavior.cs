@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerFighterBehavior : MonoBehaviour {
 	public float speed = 10.1f;
 	public float health = 30.0f;
-	public float damage = 10.0f;
+	public int damage = 10;
 	public float AtkSpeed = 0.5f;
 
 	GameObject enemy;
@@ -13,7 +13,7 @@ public class PlayerFighterBehavior : MonoBehaviour {
 	void Start () {
 		speed = 10.1f;
 		health = 30.0f;
-		damage = 10.0f;
+		damage = 10;
 		AtkSpeed = 0.5f;
 	
 	}
@@ -35,26 +35,14 @@ public class PlayerFighterBehavior : MonoBehaviour {
 	//Basic collision detection checking for two differently named objects
 	void OnCollisionEnter2D(Collision2D crash){
 
-
-
-		//Destroy (crash.gameObject);
-		if ( crash.gameObject.transform.tag =="Enemy")
-		{
+		if (crash.gameObject.transform.GetComponent<HealthScript> () != null) {
+			
 			this.speed = 0f;
-
-			enemy = crash.gameObject;
-			StartCoroutine(Attack (enemy));
-
-
-
-		}
-
-		if ( crash.gameObject.transform.tag =="Player")
-		{
-			this.speed = 0f;
-			StartCoroutine(waitMove());
+			StartCoroutine (Attack (crash.gameObject));
 			
 		}
+
+
 
 		if (crash.gameObject.name == "PlaceholderEnemyTower") 
 		{
@@ -67,33 +55,24 @@ public class PlayerFighterBehavior : MonoBehaviour {
 	IEnumerator Attack(GameObject target){
 		
 		
-		if(target.transform.tag == "Enemy")
-		{
-			while(target.transform.GetComponent<PlaceholderEnemyBehavior> ().health >= 0)
-			{
-				target.transform.GetComponent<PlaceholderEnemyBehavior> ().health -= this.damage;
-			
-			
-				Debug.Log (target.transform.GetComponent<PlaceholderEnemyBehavior> ().health);
-			
-				if(target.transform.GetComponent<PlaceholderEnemyBehavior> ().health <= 0)
-				{
-					Destroy (target);
-				}
-				else
-				{
-					yield return new WaitForSeconds(this.AtkSpeed);
-				}
 
-			
-			
-			}
-		}
-		this.speed = 10.1f;
+						while (target != null) {
+								target.transform.GetComponent<HealthScript> ().Damage (this.damage);
+				
+				
+								Debug.Log (target.transform.GetComponent<HealthScript> ().getHealth ());
+				
+								yield return new WaitForSeconds (this.AtkSpeed);
+				
+				
+
+						}
+						this.speed = 10.1f;
+				
 		
 	}
 
-	void keepMoving(){
+	public void keepMoving(){
 			
 		this.speed = 10.1f;
 

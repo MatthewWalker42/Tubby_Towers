@@ -4,7 +4,7 @@ using System.Collections;
 public class RollerFighter : MonoBehaviour {
 
 	public float speed;
-	public float damage;
+	public int damage;
 
 	// Use this for initialization
 	void Start () {
@@ -21,27 +21,15 @@ public class RollerFighter : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D crash){
 
-		if (crash.gameObject.transform.tag == "Enemy") {
 
-			crash.gameObject.transform.GetComponent<PlaceholderEnemyBehavior> ().health -= this.damage;
-			if(crash.gameObject.transform.GetComponent<PlaceholderEnemyBehavior> ().health <= 0){
 
-				Destroy (crash.gameObject);
-			}
+		if (crash.transform.GetComponent<HealthScript> () != null) {
+			this.transform.GetComponent<HealthScript> ().Damage (5);
+			crash.transform.GetComponent<HealthScript>().Damage (this.damage);
 
-			Debug.Log ("Enemy Crash");
-		}
+				}
 
-		if (crash.gameObject.transform.tag == "Player") {
-
-			crash.gameObject.transform.GetComponent<PlayerFighterBehavior> ().health -= this.damage;
-
-			if(crash.gameObject.transform.GetComponent<PlayerFighterBehavior> ().health  <= 0){
-				Destroy (crash.gameObject);
-			}
-			Debug.Log ("Player Crash");
-		}
-
+	
 		if (crash.gameObject.transform.tag == "EnemyTower") {
 
 			Destroy(this.gameObject);
