@@ -3,8 +3,12 @@ using System.Collections;
 
 public class PlaceholderPlayerTower : MonoBehaviour {
 
+	protected Camera cameraloc;
+
 	// Use this for initialization
 	void Start () {
+
+		cameraloc = (Camera) GameObject.Find("Main Camera").GetComponent<Camera> ();
 	
 		for (int i=0; i<1; i++) {
 			//StartCoroutine(WaitSecond());
@@ -32,7 +36,10 @@ public class PlaceholderPlayerTower : MonoBehaviour {
 
 	public void CreateRanged(){
 		GameObject newFighter = (GameObject) Instantiate (Resources.Load ("Placeholder/RangedFighter"));
-		newFighter.transform.position = new Vector2(-35, -2);
+				
+		//Vector2 mousPos = cameraloc.ScreenToWorldPoint(Input.mousePosition);
+		newFighter.transform.position = new Vector2(-32, -2);
+
 	}
 
 	IEnumerator WaitSecond(){
@@ -43,4 +50,9 @@ public class PlaceholderPlayerTower : MonoBehaviour {
 				}
 		//CreateUnit ();
 		}
+
+	IEnumerator WaitAround(){
+		yield return new WaitForSeconds(1.0f);
+	}
+
 }
