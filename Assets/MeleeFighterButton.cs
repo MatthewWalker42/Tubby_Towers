@@ -22,7 +22,7 @@ public class MeleeFighterButton : MonoBehaviour {
 
 		if (calorieSubtract.GetComponent<Calories>().numCalories >= cost && !onCooldown)
 		{
-			makeUnit.CreateUnit ();
+			makeUnit.transform.GetComponent<PlaceholderPlayerTower>().CreateUnit();
 			calorieSubtract.GetComponent<Calories> ().numCalories -= this.cost;
 			StartCoroutine (CoolDown());
 		}

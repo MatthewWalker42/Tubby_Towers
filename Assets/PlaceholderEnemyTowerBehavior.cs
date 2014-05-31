@@ -20,7 +20,7 @@ public class PlaceholderEnemyTowerBehavior : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		health = 100.0f;
+		this.transform.GetComponent<HealthScript> ().setHealth (500);
 
 		//StartCoroutine (WaitSecond ());
 		
@@ -40,6 +40,9 @@ public class PlaceholderEnemyTowerBehavior : MonoBehaviour {
 	IEnumerator CreateUnit(float waitTime){
 		GameObject newFighter = (GameObject) Instantiate (Resources.Load ("Placeholder/PlaceholderEnemyFighter"));
 		newFighter.transform.position = new Vector2(53, -2);
+		newFighter.layer = 9;
+		newFighter.transform.GetComponent<HealthScript> ().setHealth (30);
+		//Debug.Log (newFighter.layer.ToString ());
 		timePassed = false;
 		yield return new WaitForSeconds(waitTime);
 		timePassed = true;
@@ -47,8 +50,9 @@ public class PlaceholderEnemyTowerBehavior : MonoBehaviour {
 
 	void CreateUnitNoWait(){
 		GameObject newFighter = (GameObject) Instantiate (Resources.Load ("Placeholder/PlaceholderEnemyFighter"));
+		newFighter.layer = 9;
+		newFighter.transform.GetComponent<HealthScript> ().setHealth (30);
 		newFighter.transform.position = new Vector2(53, -2);
-
 		}
 	IEnumerator CreateMultipleUnits(int n){
 				for (int i=0; i< n; i++) {

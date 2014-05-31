@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlaceholderEnemyBehavior : MonoBehaviour {
 	public float speed = 10.1f;
-	public float dmg = 15.0f;
+	public int dmg = 15;
 	public float health = 30.0f;
 	public float AtkSpeed = 1.0f;
 
@@ -15,7 +15,7 @@ public class PlaceholderEnemyBehavior : MonoBehaviour {
 	void Start () {
 
 		speed = 10.1f;
-		dmg = 15.0f;
+		dmg = 10;
 		health = 30.0f;
 		AtkSpeed = 1.0f;
 	
@@ -34,21 +34,13 @@ public class PlaceholderEnemyBehavior : MonoBehaviour {
 
 
 	void OnCollisionEnter2D(Collision2D crash){
-
-		if ( crash.gameObject.transform.tag =="Player")
-		{
+			
+		if (crash.gameObject.transform.GetComponent<HealthScript> () != null) {
+					
 			this.speed = 0f;
-			player = crash.gameObject;
-			StartCoroutine ( Attack (player));
-
-		
-		}
-
-		if (crash.gameObject.transform.tag == "Enemy") {
-
-			this.speed = 0;
-
-		}
+			StartCoroutine (Attack (crash.gameObject));
+				
+				}
 
 		if (crash.gameObject.name == "PlaceholderPlayerTower") 
 		{
@@ -60,27 +52,21 @@ public class PlaceholderEnemyBehavior : MonoBehaviour {
 	IEnumerator Attack(GameObject target){
 
 
-		if(target.transform.tag == "Player"){
-			while(target.transform.GetComponent<PlayerFighterBehavior> ().health >= 0)
+
+			while(target != null)
 			
 			{
-				target.transform.GetComponent<PlayerFighterBehavior> ().health -= this.dmg;
+				target.transform.GetComponent<HealthScript> ().Damage (dmg);
 
 
-				Debug.Log (target.transform.GetComponent<PlayerFighterBehavior> ().health);
+				Debug.Log (target.transform.GetComponent<HealthScript> ().getHealth());
 
-				if(target.transform.GetComponent<PlayerFighterBehavior> ().health <= 0)
-				{
-					Destroy (target);
-				}
-				else
-				{
-					yield return new WaitForSeconds(this.AtkSpeed);
-				}
+				yield return new WaitForSeconds(this.AtkSpeed);
+
 
 
 			}
-		}
+
 		this.speed = 10.1f;
 	}
 

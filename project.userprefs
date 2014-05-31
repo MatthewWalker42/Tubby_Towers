@@ -1,13 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\RollerFighter.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PlaceholderPlayerTower.cs">
     <Files>
-      <File FileName="Assets\MeleeFighterButton.cs" Line="7" Column="2" />
-      <File FileName="Assets\PlaceholderPlayerTower.cs" Line="29" Column="53" />
+      <File FileName="Assets\RangedButtonScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\MeleeFighterButton.cs" Line="1" Column="1" />
+      <File FileName="Assets\PlaceholderPlayerTower.cs" Line="37" Column="25" />
       <File FileName="Assets\PlayerFighterBehavior.cs" Line="1" Column="1" />
-      <File FileName="Assets\RollerFighter.cs" Line="11" Column="12" />
+      <File FileName="Assets\RollerFighter.cs" Line="1" Column="1" />
       <File FileName="Assets\SpawnEnemies.cs" Line="1" Column="1" />
-      <File FileName="Assets\RollerButtonScript.cs" Line="13" Column="1" />
+      <File FileName="Assets\RollerButtonScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\PlaceholderEnemyTowerBehavior.cs" Line="53" Column="24" />
+      <File FileName="Assets\PlayerRanged.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
