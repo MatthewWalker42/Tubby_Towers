@@ -21,7 +21,7 @@ public class PlaceholderPlayerTower : MonoBehaviour {
 
 	public void CreateUnit(){
 		GameObject newFighter = (GameObject) Instantiate (Resources.Load ("Placeholder/PlaceholderPlayerFighter"));
-		newFighter.transform.position = new Vector2(-33, -2);
+		newFighter.transform.position = new Vector2(-33, 4);
 		newFighter.layer = 10;
 		newFighter.transform.GetComponent<HealthScript> ().setHealth (30);
 		}
@@ -35,16 +35,13 @@ public class PlaceholderPlayerTower : MonoBehaviour {
 
 	public void CreateRanged(){
 		GameObject newFighter = (GameObject) Instantiate (Resources.Load ("Placeholder/RangedFighter"));
-<<<<<<< HEAD
+
 				
 		//Vector2 mousPos = cameraloc.ScreenToWorldPoint(Input.mousePosition);
-		newFighter.transform.position = new Vector2(-32, -2);
+		newFighter.transform.position = new Vector2(-32, 4);
 
-=======
-		newFighter.transform.position = new Vector2(-35, -2);
 		newFighter.layer = 10;
 		newFighter.transform.GetComponent<HealthScript> ().setHealth (30);
->>>>>>> FETCH_HEAD
 	}
 
 	IEnumerator WaitSecond(){
