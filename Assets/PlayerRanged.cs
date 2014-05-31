@@ -46,7 +46,7 @@ public class PlayerRanged : MonoBehaviour {
 		if(Input.GetMouseButton(0)){
 			Debug.Log ("Mouse click!");
 			while(!Input.GetMouseButtonUp(0)){
-				this.transform.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+				//this.transform.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
 			}
 
 		}

@@ -24,6 +24,7 @@ public class PlaceholderPlayerTower : MonoBehaviour {
 		newFighter.transform.position = new Vector2(-33, 4);
 		newFighter.layer = 10;
 		newFighter.transform.GetComponent<HealthScript> ().setHealth (30);
+		newFighter.transform.GetComponent<HealthScript> ().setPoints(0);
 		}
 
 	public void CreateRoller(){
@@ -42,6 +43,7 @@ public class PlaceholderPlayerTower : MonoBehaviour {
 
 		newFighter.layer = 10;
 		newFighter.transform.GetComponent<HealthScript> ().setHealth (30);
+		newFighter.transform.GetComponent<HealthScript> ().setPoints(0);
 	}
 
 	IEnumerator WaitSecond(){

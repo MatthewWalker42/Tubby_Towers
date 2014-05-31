@@ -187,6 +187,7 @@
      <Compile Include="Assets\RollerButtonScript.cs" />
      <Compile Include="Assets\RollerFighter.cs" />
      <Compile Include="Assets\SpawnEnemies.cs" />
+     <Compile Include="Assets\cModify.cs" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\ReadMe - 3.5.1.txt" />
      <None Include="Assets\NGUI\Examples\Models\Orc\Orc Skin.shader" />

@@ -5,9 +5,12 @@ public class HealthScript : MonoBehaviour {
 
 
 	int health;
+	public int bonusPoints = 2;
+	GameObject cal;
+
 	// Use this for initialization
 	void Start () {
-
+		cal = GameObject.Find("CalorieTimer");
 		health = 15;
 	
 	}
@@ -16,7 +19,9 @@ public class HealthScript : MonoBehaviour {
 	void Update () {
 
 		if (this.health <= 0) {
-			Death();		
+			Death();
+			cal.GetComponent<Calories> ().numCalories += this.bonusPoints;	
+			cal.GetComponent<Calories> ().bonus = this.bonusPoints;	
 		}
 	
 	}
@@ -36,6 +41,10 @@ public class HealthScript : MonoBehaviour {
 
 		this.health = h;
 		}
+
+	public void setPoints(int p){
+		this.bonusPoints = p;
+	}
 
 	public void Damage(int d){
 			

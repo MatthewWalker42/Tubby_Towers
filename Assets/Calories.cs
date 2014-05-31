@@ -7,11 +7,13 @@ public class Calories : MonoBehaviour {
 	public int startCalories = 15;
 	public int numCalories = 0;
 	protected int prevcTimer = 0;
+	public int bonus = 0;
 
 	// Use this for initialization
 	void Start () {
 		numCalories = startCalories;
 		prevcTimer = (int) _cTimer;
+		bonus = 0;
 	
 	}
 	
@@ -22,6 +24,7 @@ public class Calories : MonoBehaviour {
 		if ((int) _cTimer > prevcTimer){
 			numCalories += 1;
 			prevcTimer = (int) _cTimer;
+			bonus = 0;
 		}
 	
 	}
