@@ -4,14 +4,14 @@ using System.Collections;
 public class HealthScript : MonoBehaviour {
 
 
-	int health;
+	public int health = 500;
 	public int bonusPoints = 2;
 	GameObject cal;
 
 	// Use this for initialization
 	void Start () {
 		cal = GameObject.Find("CalorieTimer");
-		health = 15;
+		//health = 15;
 	
 	}
 	

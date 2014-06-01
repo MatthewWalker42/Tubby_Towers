@@ -11,6 +11,7 @@ public class PlaceholderPlayerTower : MonoBehaviour {
 		cameraloc = (Camera) GameObject.Find("Main Camera").GetComponent<Camera> ();
 	
 		this.transform.GetComponent<HealthScript> ().setHealth (500);
+		Debug.Log("I call start!");
 	
 	}
 	
@@ -39,7 +40,7 @@ public class PlaceholderPlayerTower : MonoBehaviour {
 
 				
 		//Vector2 mousPos = cameraloc.ScreenToWorldPoint(Input.mousePosition);
-		newFighter.transform.position = new Vector2(-32, 4);
+		newFighter.transform.position = new Vector2(-35, 4);
 
 		newFighter.layer = 10;
 		newFighter.transform.GetComponent<HealthScript> ().setHealth (30);
