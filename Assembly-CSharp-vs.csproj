@@ -50,6 +50,7 @@
      <Compile Include="Assets\Calories.cs" />
      <Compile Include="Assets\HealthScript.cs" />
      <Compile Include="Assets\MeleeFighterButton.cs" />
+     <Compile Include="Assets\MoveMainCamera.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\UICursor.cs" />
