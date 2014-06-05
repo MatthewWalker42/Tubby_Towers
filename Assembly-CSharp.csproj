@@ -48,8 +48,10 @@
   <ItemGroup>
      <Compile Include="Assets\CalorieLabel.cs" />
      <Compile Include="Assets\Calories.cs" />
+     <Compile Include="Assets\Dragable.cs" />
      <Compile Include="Assets\HealthScript.cs" />
      <Compile Include="Assets\MeleeFighterButton.cs" />
+     <Compile Include="Assets\MouseObserverBehavior.cs" />
      <Compile Include="Assets\MoveMainCamera.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />

@@ -5,13 +5,14 @@ public class PlayerRanged : MonoBehaviour {
 	public float health = 30.0f;
 	public float AtkSpeed = 0.5f;
 	protected bool attackCool = false;
-
+	protected Vector3 screenSpace;
+	protected Vector3 offSet;
 	protected Camera cameraLoc;
 
 	GameObject enemy;
 
-	Ray ray;
-	RaycastHit hit;
+	//Ray ray;
+	//RaycastHit hit;
 
 	// Use this for initialization
 	void Start () {
@@ -24,33 +25,33 @@ public class PlayerRanged : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-	ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-       if(Physics.Raycast(ray, out hit))
-       {
-         Debug.Log(hit.collider.name);
-       }
-
 
 		if(attackCool == false){
 				StartCoroutine(Attack());	
 		}
-
-		//OnMouseOver();
-
-		//Debug.Log (health);
 	
 	}
 
-	void OnMouseOver(){
-		Debug.Log("Mouse over!");
-		if(Input.GetMouseButton(0)){
-			Debug.Log ("Mouse click!");
-			while(!Input.GetMouseButtonUp(0)){
-				//this.transform.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-			}
-
-		}
+	void OnMouseDown(){
+		screenSpace = Camera.main.WorldToScreenPoint (transform.position); 
+    	offSet = transform.position - Camera.main.ScreenToWorldPoint( new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenSpace.z)); 
 	}
+
+	void OnMouseDrag(){
+		Vector3 curScreenSpace = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenSpace.z); 
+    Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenSpace) + offSet;
+    if(curPosition.x > 20){
+    	curPosition.x = 20;
+    }
+    if(curPosition.y < 4){
+    	curPosition.y = 4;
+    }
+    else if(curPosition.x < -47){
+    	curPosition.x = -40;
+    }
+    transform.position = curPosition; 
+	}
+
 
 	//Basic collision detection checking for two differently named objects
 	void OnCollisionEnter2D(Collision2D crash){
