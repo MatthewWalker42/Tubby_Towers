@@ -46,10 +46,13 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\BackButtonScript.cs" />
      <Compile Include="Assets\CalorieLabel.cs" />
      <Compile Include="Assets\Calories.cs" />
+     <Compile Include="Assets\CreditsButtonScript.cs" />
      <Compile Include="Assets\Dragable.cs" />
      <Compile Include="Assets\HealthScript.cs" />
+     <Compile Include="Assets\HelpButtonScript.cs" />
      <Compile Include="Assets\MeleeFighterButton.cs" />
      <Compile Include="Assets\MouseObserverBehavior.cs" />
      <Compile Include="Assets\MoveMainCamera.cs" />
@@ -183,6 +186,7 @@
      <Compile Include="Assets\PlaceholderEnemyBehavior.cs" />
      <Compile Include="Assets\PlaceholderEnemyTowerBehavior.cs" />
      <Compile Include="Assets\PlaceholderPlayerTower.cs" />
+     <Compile Include="Assets\PlayButtonScript.cs" />
      <Compile Include="Assets\PlayerFighterBehavior.cs" />
      <Compile Include="Assets\PlayerRanged.cs" />
      <Compile Include="Assets\ProjectileScript.cs" />
@@ -190,6 +194,7 @@
      <Compile Include="Assets\RollerButtonScript.cs" />
      <Compile Include="Assets\RollerFighter.cs" />
      <Compile Include="Assets\SpawnEnemies.cs" />
+     <Compile Include="Assets\WardenScript.cs" />
      <Compile Include="Assets\cModify.cs" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\NGUI\ReadMe - 3.5.1.txt" />
