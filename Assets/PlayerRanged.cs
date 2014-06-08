@@ -8,7 +8,7 @@ public class PlayerRanged : MonoBehaviour {
 	protected Vector3 screenSpace;
 	protected Vector3 offSet;
 	protected Camera cameraLoc;
-	public int BurgerLimit = 50;
+	public int BurgerLimit = 25;
 	protected int BurgerCount = 0;
 
 	GameObject enemy;
