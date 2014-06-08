@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\BackButtonScript.cs" />
+     <Compile Include="Assets\BackgroundMusicScript.cs" />
      <Compile Include="Assets\BigBertha.cs" />
      <Compile Include="Assets\BigBerthaButtonScript.cs" />
      <Compile Include="Assets\CalorieLabel.cs" />
