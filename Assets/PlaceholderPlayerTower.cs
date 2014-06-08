@@ -11,12 +11,16 @@ public class PlaceholderPlayerTower : MonoBehaviour {
 		cameraloc = (Camera) GameObject.Find("Main Camera").GetComponent<Camera> ();
 	
 		this.transform.GetComponent<HealthScript> ().setHealth (500);
-		Debug.Log("I call start!");
+		//Debug.Log("I call start!");
+		//CreateRascal ();
+
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+
 	
 	}
 
@@ -44,6 +48,24 @@ public class PlaceholderPlayerTower : MonoBehaviour {
 
 		newFighter.layer = 10;
 		newFighter.transform.GetComponent<HealthScript> ().setHealth (30);
+		newFighter.transform.GetComponent<HealthScript> ().setPoints(0);
+	}
+
+	public void CreateBirtha(){
+
+		GameObject newFighter = (GameObject)Instantiate (Resources.Load ("Placeholder/BigBertha"));
+		newFighter.transform.position = new Vector2(-35, 4);
+		newFighter.layer = 10;
+		newFighter.transform.GetComponent<HealthScript> ().setHealth (90);
+		newFighter.transform.GetComponent<HealthScript> ().setPoints(0);
+	}
+
+	public void CreateRascal(){
+
+		GameObject newFighter = (GameObject)Instantiate (Resources.Load ("Placeholder/Rascal"));
+		newFighter.transform.position = new Vector2(-35, 4);
+		newFighter.layer = 10;
+		newFighter.transform.GetComponent<HealthScript> ().setHealth (45);
 		newFighter.transform.GetComponent<HealthScript> ().setPoints(0);
 	}
 

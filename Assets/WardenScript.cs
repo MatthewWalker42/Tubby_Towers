@@ -19,10 +19,10 @@ public class WardenScript : MonoBehaviour {
 
 		if(playerT == null){
 			//Debug.Log("You Died");
-			Application.LoadLevel("StartMenu");
+			Application.LoadLevel("GameOverMenu");
 		}
 		if(enemyT == null){
-			Application.LoadLevel("StartMenu");
+			Application.LoadLevel("VictoryMenu");
 		}
 	
 	}

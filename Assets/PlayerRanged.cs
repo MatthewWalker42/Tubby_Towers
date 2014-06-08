@@ -8,6 +8,8 @@ public class PlayerRanged : MonoBehaviour {
 	protected Vector3 screenSpace;
 	protected Vector3 offSet;
 	protected Camera cameraLoc;
+	public int BurgerLimit = 50;
+	protected int BurgerCount = 0;
 
 	GameObject enemy;
 
@@ -28,6 +30,10 @@ public class PlayerRanged : MonoBehaviour {
 
 		if(attackCool == false){
 				StartCoroutine(Attack());	
+		}
+
+		if(BurgerCount >= BurgerLimit){
+			this.transform.GetComponent<HealthScript> ().Damage (50);
 		}
 	
 	}
@@ -72,6 +78,7 @@ public class PlayerRanged : MonoBehaviour {
 		attackCool = true;
 		yield return new WaitForSeconds (2.0f);
 		attackCool = false;
+		BurgerCount += 1;
 		
 	}
 

@@ -47,12 +47,15 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\BackButtonScript.cs" />
+     <Compile Include="Assets\BigBertha.cs" />
+     <Compile Include="Assets\BigBerthaButtonScript.cs" />
      <Compile Include="Assets\CalorieLabel.cs" />
      <Compile Include="Assets\Calories.cs" />
      <Compile Include="Assets\CreditsButtonScript.cs" />
      <Compile Include="Assets\Dragable.cs" />
      <Compile Include="Assets\HealthScript.cs" />
      <Compile Include="Assets\HelpButtonScript.cs" />
+     <Compile Include="Assets\MainMenuButton.cs" />
      <Compile Include="Assets\MeleeFighterButton.cs" />
      <Compile Include="Assets\MouseObserverBehavior.cs" />
      <Compile Include="Assets\MoveMainCamera.cs" />
@@ -191,6 +194,9 @@
      <Compile Include="Assets\PlayerRanged.cs" />
      <Compile Include="Assets\ProjectileScript.cs" />
      <Compile Include="Assets\RangedButtonScript.cs" />
+     <Compile Include="Assets\Rascal.cs" />
+     <Compile Include="Assets\RascalButtonScript.cs" />
+     <Compile Include="Assets\RetryButtonScript.cs" />
      <Compile Include="Assets\RollerButtonScript.cs" />
      <Compile Include="Assets\RollerFighter.cs" />
      <Compile Include="Assets\SpawnEnemies.cs" />
